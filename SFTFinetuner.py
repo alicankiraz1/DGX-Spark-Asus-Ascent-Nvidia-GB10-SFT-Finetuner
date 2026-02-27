@@ -630,11 +630,11 @@ def main():
     use_assistant_loss = False
     if fmt_name == "conversational":
         template_str = getattr(tokenizer, "chat_template", "") or ""
-        if "generation" in template_str:
+        if "{% generation %}" in template_str and "{% endgeneration %}" in template_str:
             use_assistant_loss = True
             print("  Chat template supports assistant masking — enabling assistant_only_loss.")
         else:
-            print("  Chat template does not support {% generation %} tags — training on full sequence.")
+            print("  Chat template lacks {% generation %} tags — training on full sequence.")
 
     sft_config = SFTConfig(
         output_dir=output_dir,
@@ -656,7 +656,7 @@ def main():
         save_total_limit=3,
         load_best_model_at_end=True,
         optim="adamw_torch_fused",
-        warmup_ratio=0.03,
+        warmup_steps=50,
         weight_decay=0.01,
         max_grad_norm=0.3,
         assistant_only_loss=use_assistant_loss,
