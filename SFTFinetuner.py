@@ -7,7 +7,7 @@ import subprocess
 import getpass
 import time
 
-os.environ["PYTORCH_CUDA_ALLOC_CONF"] = "expandable_segments:True"
+os.environ["PYTORCH_ALLOC_CONF"] = "expandable_segments:True"
 
 import torch
 from datasets import load_dataset, DatasetDict
@@ -663,7 +663,6 @@ def main():
         push_to_hub=False,
         report_to="none",
         dataset_num_proc=os.cpu_count(),
-        shuffle_dataset=True,
     )
 
     print("  Initializing SFTTrainer ...")
