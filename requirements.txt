@@ -1,0 +1,11 @@
+transformers
+trl
+peft
+datasets
+bitsandbytes
+accelerate
+safetensors
+huggingface_hub
+pyfiglet
+sentencepiece
+protobuf
