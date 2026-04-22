@@ -30,7 +30,7 @@ An interactive CLI tool that guides you through the entire SFT workflow — from
 ## Quick Start
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/DGX-Spark-Asus-Ascent-Nvidia-GB10-SFT-Finetuner.git
+git clone https://github.com/alicankiraz1/DGX-Spark-Asus-Ascent-Nvidia-GB10-SFT-Finetuner.git
 cd DGX-Spark-Asus-Ascent-Nvidia-GB10-SFT-Finetuner
 
 chmod +x setup_and_run.sh
